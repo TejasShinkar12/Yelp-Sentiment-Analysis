@@ -1,0 +1,2 @@
+# ignore the 8GB dataset
+yelp_dataset/*.json
