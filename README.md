@@ -23,7 +23,6 @@
 - [📍 Overview](#-overview)
 - [👾 Features](#-features)
 - [📁 Project Structure](#-project-structure)
-  - [📂 Project Index](#-project-index)
 - [🔰 Contributing](#-contributing)
 - [🎗 License](#-license)
 - [🙌 Acknowledgments](#-acknowledgments)
@@ -32,14 +31,63 @@
 
 ## 📍 Overview
 
-<code>❯ REPLACE-ME</code>
+This focuses on performing sentiment analysis on Yelp reviews and building a predictive model for review ratings. The objective is to analyze the sentiment of customer reviews, categorize them as positive or negative, and predict review ratings (high or low). It leverages natural language processing (NLP) techniques, such as tokenization, text preprocessing, and sentiment analysis, to extract valuable insights from text data.
+
+Sentiment analysis is initially performed using the TextBlob package, which provides a sentiment polarity score for each review. A Naive Bayes model is then trained using the IMDB movie review dataset, which is applied to the Yelp reviews for sentiment classification. The model's accuracy in predicting the sentiment of Yelp reviews is evaluated and compared against the actual ratings.
 
 ---
 
 ## 👾 Features
 
-<code>❯ REPLACE-ME</code>
+<details open>
+<summary> 🧹 Data Cleaning & Preprocessing: </summary> 
+Loads and preprocesses the Yelp dataset by selecting relevant columns (text and review_stars). Adds a new high_low column to categorize reviews into high ratings (>=4 stars) and low ratings (<4 stars). Cleans the text column by removing punctuation, converting to lowercase, and replacing newline characters.
 
+</details>
+<br>
+<details open>
+<summary> 📊 Sentiment Analysis with TextBlob: </summary> 
+    Utilizes TextBlob to calculate a sentiment polarity score for each review.
+    The polarity score ranges from -1 (negative sentiment) to +1 (positive sentiment), with the score being stored in a new column textblob_sentiment.
+
+</details>
+<br>
+<details open>
+<summary> 🌥️ Visualization of Frequent Words: </summary> 
+Generates word clouds for both high and low-rated reviews to visually represent the most frequent words in each category.
+Word clouds help in understanding the common themes and sentiments associated with reviews.
+</details>
+<br>
+<details open>
+<summary> 🤖 Model Training with IMDB Dataset: </summary> 
+Trains a Naive Bayes classifier on the IMDB dataset, using TfidfVectorizer for text vectorization.
+The model is evaluated on the IMDB test set, achieving an accuracy of 83.93%.
+</details>
+<br>
+<details open>
+<summary> 🧠 Application of the Trained Model on Yelp Data: </summary> 
+Applies the trained Naive Bayes model to predict the sentiment of Yelp reviews based on the text.
+Compares the model’s predictions with the high_low ratings column to evaluate model performance.
+Achieves a sentiment prediction accuracy of 79.2% on Yelp reviews.
+</details>
+<br>
+<details open>
+<summary> 📈 Evaluation of Sentiment Accuracy: </summary> 
+The accuracy of the model’s sentiment predictions is compared with the actual ratings (high_low) to assess its performance.
+The model achieves an accuracy of 79.2% in predicting the sentiment of Yelp reviews, showcasing the model's effectiveness on real-world review data.
+</details>
+
+---
+
+## 📷 Visualizations
+### Topic Modeling Results: Topic Distribution and Term Relevance
+![Topic Modeling](https://kappa.lol/N8ENP)
+
+### Low rating word cloud
+![alt text](https://kappa.lol/59PW_)
+
+### High rating word cloud
+![alt text](https://kappa.lol/w6klh)
 ---
 
 ## 📁 Project Structure
@@ -102,15 +150,19 @@
 
 ---
 
+## ⌛Dataset
+- [Yelp Dataset](https://www.yelp.com/dataset) – The valuable Yelp dataset, which formed the foundation for the analysis and model-building process.
+---
+
 ## 🎗 License
 
 This project is protected under the [MIT](https://github.com/TejasShinkar12/Yelp-Sentiment-Analysis?tab=MIT-1-ov-file#readme) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+
 
 ---
 
 ## 🙌 Acknowledgments
 
-- [Dataset](https://www.yelp.com/dataset)
-- Inspired by this [project](https://youtu.be/dowagyrMtnU) by [Alex Teboul](https://www.youtube.com/@acteboul17) 
+- [YouTube](https://youtu.be/dowagyrMtnU) - This video by [Alex Teboul](https://www.youtube.com/@acteboul17) which inspired and guided me for this project
 
 ---
