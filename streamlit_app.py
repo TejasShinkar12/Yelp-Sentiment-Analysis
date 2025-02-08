@@ -28,7 +28,7 @@ def main():
     st.title("Review Sentiment Analysis")
     st.write("Enter your review text below to analyze its sentiment")
 
-    user_input = st.text_area("Review text:", height=100)
+    user_input = st.text_area("Review text:", height=75)
 
     if st.button("Analyze Sentiment"):
         if user_input:
@@ -37,12 +37,11 @@ def main():
             
             if prediction == 1:
                 st.success("😊 Positive Sentiment - This review appears to be positive!")
+                st.write(f"\nConfidence Score: {probabilities[1]:.2%}")
             else:
                 st.error("😞 Negative Sentiment - This review appears to be negative!")
-                
-            st.write("\nConfidence Scores:")
-            st.write(f"Negative: {probabilities[0]:.2%}")
-            st.write(f"Positive: {probabilities[1]:.2%}")
+                st.write(f"\nConfidence Score: {probabilities[0]:.2%}")
+
         else:
             st.warning("Please enter some text to analyze")
 
