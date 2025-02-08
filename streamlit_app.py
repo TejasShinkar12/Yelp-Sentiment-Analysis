@@ -1,8 +1,6 @@
 import streamlit as st
 import pickle
-import numpy as np
 import string
-from sklearn.feature_extraction.text import TfidfVectorizer
 
 def load_artifacts(model_path='sentiment_model.pkl', vectorizer_path='vectorizer.pkl'):
     with open(model_path, 'rb') as model_file:
