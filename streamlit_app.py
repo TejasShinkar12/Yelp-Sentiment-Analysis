@@ -25,7 +25,7 @@ def predict_sentiment(text, model, vectorizer):
     return prediction, probabilities
 
 def main():
-    st.title("Yelp Review Sentiment Analysis")
+    st.title("Review Sentiment Analysis")
     st.write("Enter your review text below to analyze its sentiment")
 
     user_input = st.text_area("Review text:", height=100)
